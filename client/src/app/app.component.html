@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" routerLink="/">Eventhub</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto"> 
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/events" routerLinkActive="active">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/special" routerLinkActive="active">Special</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+        <li class="nav-item" *ngIf="!authService.loggedIn()">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!authService.loggedIn()">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.loggedIn()">
+            <a class="nav-link" style="cursor: pointer" (click)="authService.logoutUser()">Logout</a>
+          </li>
+      </ul>
+  </div> 
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
