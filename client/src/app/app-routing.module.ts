@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EventsComponent } from './events/events.component';
+import { ServicesComponent } from './services/services.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { SpecialEventsComponent } from './special-events/special-events.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/events',
+    redirectTo: '/services',
     pathMatch: 'full'
   },
   {
-    path: 'events',
-    component: EventsComponent
-  },
-  {
-    path: 'special',
-    component: SpecialEventsComponent,
-    canActivate: [AuthGuard]
+    path: 'services',
+    component: ServicesComponent
   },
   {
     path: 'login',

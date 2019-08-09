@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const PORT = 3000;
 const api = require('./routes/api');
+const adminRoutes = require('./routes/admin-routes');
 
 const app = express();
 
@@ -21,6 +22,7 @@ mongoose.connect(db, err => {
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', api);
+app.use('/admin', adminRoutes);
 
 app.get('/', (req, res)=> {
 	res.send("Hello from server");
