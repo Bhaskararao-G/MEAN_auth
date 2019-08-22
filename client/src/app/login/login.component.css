@@ -1,0 +1,14 @@
+.login_card .card-header {
+    background-color: #2872a7;
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+}
+.login_card .card-body {
+    border: none;
+}
+.login_btn {
+    border-radius: 0px;
+    background-color: #f57144;
+    border-color: #f57144;
+}
