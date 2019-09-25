@@ -1,0 +1,15 @@
+.main_container {
+    margin-top: 1%;
+    background-color: #fff;
+    padding-top: 1%;
+}
+.view_more_link {
+    margin: 0px 9px 3px 0px;
+    text-align: right;
+}
+.prof_badge {
+    margin-right: 4px;
+}
+.user_icon {
+    width: 60px;
+}

@@ -1,0 +1,31 @@
+<div class="container main_container">
+    <h4>Workers</h4>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Workers</li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let worker of workers">
+            <div class="card emp_card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="user_icon" src="../../../assets/images/user.png" alt="User Icon">
+                        </div>
+                        <div class="col-md-9">
+                            <h5 class="card-title">{{worker.fname}}</h5>
+                            <p class="card-text">
+                            </p>
+                            <div>
+                                <span [ngStyle]="{'background-color': prof.color}" class="badge badge-primary prof_badge" *ngFor="let prof of worker.profession">{{prof.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view_more_link">View more</a>
+            </div>
+        </div>
+    </div>
+</div>

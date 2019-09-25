@@ -1,0 +1,15 @@
+.apply_job_btn {
+    background-color: #1b7ec5;
+    border-color: #1b7ec5;
+    float: right;
+}
+.jobs_grid {
+    margin-top: 1%;
+}
+.services_card .card-title a {
+    text-decoration: initial;
+    color: initial;
+}
+.services_card .card-title a:hover {
+    color: #1b7ec5;
+}

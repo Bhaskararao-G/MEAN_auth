@@ -6,25 +6,29 @@ const users_ctrl = require('../controllers/users_ctrl');
 
 
 
-// function verifyToken(req, res, next) {
-// 	if (!req.headers.authorization) {
-// 		return res.status(401).send('Unauthorized request');
-// 	}
-// 	let token = req.headers.authorization.split(' ')[1]
-// 	if (token === null) {
-// 		return res.status(401).send('Unauthorized request');
-// 	}
-// 	let payload = jwt.verify(token, 'secretKey');
-// 	if (!payload) {
-// 		return res.status(401).send('Unauthorized request');
-// 	}
+function verifyToken(req, res, next) {
+    console.log(req.headers.authorization);
+	if (!req.headers.authorization) {
+		return res.status(401).send('Unauthorized request');
+	}
+    let token = req.headers.authorization.split(' ')[1]
+    console.log(token);
+	if (token === 'null') {
+		return res.status(401).send('Unauthorized request');
+	} else {
+        let payload = jwt.verify(token, 'secretKey');
+        if (!payload) {
+            return res.status(401).send('Unauthorized request');
+        }
+        req.userId = payload.subject
+        next();
+    }
 
-// 	req.userId = payload.subject
-// 	next();
-// }
+}
 
 router.post('/add_user', users_ctrl.createUser);
-router.get('/get_users', users_ctrl.getUsers);
+router.get('/get_users', verifyToken, users_ctrl.getUsers);
+router.post('/login', users_ctrl.userLogin);
 
 // router.post('/register', (req, res)=> {
 // 	let userData = req.body;

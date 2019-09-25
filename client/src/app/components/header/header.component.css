@@ -9,7 +9,7 @@
     color: orangered;
 }
 .nav_header .navbar-nav li a {
-    font-weight: bold;
+    margin-left: 10px;
 }
 .nav_header .navbar-nav li a.active {
     color: #2872a7;
@@ -17,4 +17,17 @@
 }
 .nav_header .navbar-nav li a:hover {
     color: #2872a7;
+}
+.post_job_btn {
+    background-color: #1b7ec5;
+    border-color: #1b7ec5;
+}
+.right_nav .dropdown-menu {
+    left: -28px;
+    top: 35px;
+}
+.right_nav .dropdown-item {
+    padding: 5px;
+    width: 85%;
+    text-align: center;
 }

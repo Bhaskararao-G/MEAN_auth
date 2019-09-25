@@ -3,13 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-	fname: String,
-	lname: String,
-	password: String,
-	gender: String,
-	age: Number,
-	phone: Number,
-	profession: { type: mongoose.Schema.Types.ObjectId, ref: 'profession' },
+	fname: { type: String },
+	lname: { type: String },
+	uname: { type: String },
+	password: { type: String },
+	gender: { type: String, default: null },
+	age: { type: Number, default: null },
+	phone: { type: Number },
+	profession: [{ type: mongoose.Schema.Types.ObjectId, ref: 'profession' }],
 	},{
 		timestamps: true
 	});

@@ -1,0 +1,18 @@
+.login_card .card-header {
+    background-color: #2872a7;
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+}
+.login_card .card-body {
+    border: none;
+}
+.login_btn {
+    border-radius: 0px;
+    background-color: transparent;
+    border-color: #2872a7;
+    color: #2872a7;
+}
+.login_card {
+    box-shadow: 0px 0px 10px 2px #ccc;
+}
