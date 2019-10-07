@@ -1,5 +1,5 @@
 <div class="container main_container">
-        <h4>Jobs</h4>
+        <h4 class="page_heading">Jobs <input class="job_search_input" type="text" name="search" placeholder="Search.."></h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -7,19 +7,22 @@
             </ol>
         </nav>
         <div class="row">
-            <div class="col-md-12 jobs_grid" *ngFor="let item of [1,2,3,4,5,6,7,8]">
+            <div class="col-md-12 jobs_grid" *ngFor="let job of jobs">
                 <div class="card services_card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-9">
                                 <h5 class="card-title">
-                                   <a href="#">Api data for betting web site</a>
+                                   <a href="#">{{job.title}}</a>
                                 </h5>
                                 <p style="font-size: 14px;" class="card-text">
-                                    We have an existing Shopify web site.
-                                    We are looking for a developer who can help us to update the UI and features of this web site.
-                                    Plus point: If you are familiar with Pagecloud and graphic design, s/he will earn plus point.
+                                    {{job.description}}
                                 </p>
+                                <ul class="other_details">
+                                    <li><span class="badge badge-primary" [ngStyle]="{'background-color': job.type.color}">{{job.type.name}}</span></li>
+                                    <li class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> {{job.location}}</li>
+                                    <li class="time_ago">{{moment(job.createdAt).startOf('hour').fromNow()}}</li>
+                                </ul>
                             </div>
                             <div class="col-md-3">
                                 <button class="btn btn-sm btn-primary apply_job_btn">

@@ -18,6 +18,7 @@ import { JobsComponent } from './pages/jobs/jobs.component';
 import { WorkersComponent } from './pages/workers/workers.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { PostJobComponent } from './pages/jobs/post-job/post-job.component';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PostJobComponent } from './pages/jobs/post-job/post-job.component';
     ReactiveFormsModule,
     HttpClientModule,
     AngularMultiSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    GooglePlaceModule
   ],
   providers: [AuthService, AuthGuard,
   {

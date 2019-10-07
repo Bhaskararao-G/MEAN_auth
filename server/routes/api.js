@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 
 const users_ctrl = require('../controllers/users_ctrl');
+const job_ctrl = require('../controllers/job_ctrl');
 
 
 
@@ -29,6 +30,8 @@ function verifyToken(req, res, next) {
 router.post('/add_user', users_ctrl.createUser);
 router.get('/get_users', verifyToken, users_ctrl.getUsers);
 router.post('/login', users_ctrl.userLogin);
+router.post('/create_job',verifyToken, job_ctrl.createJob);
+router.get('/get_jobs',verifyToken, job_ctrl.getJobs);
 
 // router.post('/register', (req, res)=> {
 // 	let userData = req.body;

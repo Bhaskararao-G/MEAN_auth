@@ -13,3 +13,45 @@
 .services_card .card-title a:hover {
     color: #1b7ec5;
 }
+.other_details {
+    margin-left: -39px;
+    list-style: none;
+}
+.other_details .location, .other_details .time_ago {
+    font-size: 13px;
+}
+.other_details li {
+    display: initial;
+    margin-right: 13px;
+    border-right: 1px solid #9a9a9a;
+    padding-right: 12px;
+}
+.other_details li:last-child {
+    padding-right: initial;
+    border-right: none;
+}
+.job_search_input {
+    background-size: 20px;
+    float: right;
+    width: 130px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 22px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../../../assets/images/search.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.job_search_input:focus {
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 22px;
+    outline: none;
+  }
+.page_heading {
+    margin-bottom: 22px;
+}
