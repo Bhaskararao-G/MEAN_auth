@@ -11,6 +11,7 @@ const userSchema = new Schema({
 	age: { type: Number, default: null },
 	phone: { type: Number },
 	profession: [{ type: mongoose.Schema.Types.ObjectId, ref: 'profession' }],
+	status: { type: Number, default: 1 }
 	},{
 		timestamps: true
 	});

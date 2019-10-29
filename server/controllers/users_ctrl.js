@@ -5,7 +5,7 @@ module.exports = {
     getUsers(req, res) {
         User.find({}).populate('profession').exec((err, users)=> {
             if (!err) {
-                res.status(200).send({
+                res.send({
                     success: true,
                     msg: "User fetched successfully",
                     users: users
@@ -81,4 +81,25 @@ module.exports = {
             }
         })
     },
+    ActiveBlockUser(req, res) {
+        let status = req.body.status === 1 ? 0 : 1;
+        User.findOneAndUpdate({
+            _id: req.body.id,
+        }, {
+            status: status,
+        }, (err, doc) => {
+            let status_text = doc.status === 1 ? "blocked" : "activated";
+            if (err) {
+                res.send({
+                    success: false,
+                    msg: "Something went wrong"
+                })
+            } else {
+                res.send({
+                    success: true,
+                    msg: "User "+status_text+" successfully"
+                })
+            }
+        });
+    }
 }
