@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:3000/api/';
-  private adminApiUrl = 'http://localhost:3000/admin/';
+  private apiUrl = environment.apiUrl;
+  private adminApiUrl = environment.baseUrl;
+
+  // private apiUrl = 'http://localhost:3000/api/';
+  // private adminApiUrl = 'http://localhost:3000/admin/';
 
   constructor(private http: HttpClient, private router: Router) { }
 
