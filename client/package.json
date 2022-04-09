@@ -23,7 +23,7 @@
     "angular2-multiselect-dropdown": "^4.6.3",
     "chart.js": "^2.8.0",
     "font-awesome": "^4.7.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-google-places-autocomplete": "^2.0.4",
     "primeicons": "^2.0.0",
     "primeng": "^8.0.3",
